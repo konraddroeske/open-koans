@@ -15,12 +15,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
    * @return the found user, or null if not found
    */
   User findByUsername(String username);
-
-  /**
-   * Find users by their email domain.
-   *
-   * @param domain the email domain to search for
-   * @return a list of users with matching email domain
-   */
-  List<User> findByEmailContaining(String domain);
 }
