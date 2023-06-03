@@ -1,15 +1,19 @@
 package com.openkoans.openkoans.domain;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 /**
  * Represents a User's Answer to a Question in the application.
  */
+@Entity
+@Table(name = "answers")
 public class Answer {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,9 +37,9 @@ public class Answer {
   /**
    * Constructs a new Question with the specified username, password, and email.
    *
-   * @param user        The user of the Answer.
-   * @param question    The question of the Answer.
-   * @param answerText  The text of the Answer.
+   * @param user       The user of the Answer.
+   * @param question   The question of the Answer.
+   * @param answerText The text of the Answer.
    */
   public Answer(User user, Question question, String answerText) {
     this.user = user;
