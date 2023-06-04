@@ -6,30 +6,21 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Represents a Question in the application.
  */
+@Getter
+@Setter
 @Entity
 @Table(name = "questions")
 public class Question {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long questionId;
-
-  public Question() {
-  }
-
-  /**
-   * Constructs a new Question with the specified username, password, and email.
-   *
-   * @param questionText     The text of the Question.
-   * @param questionCategory The category of the Question.
-   */
-  public Question(String questionText, String questionCategory) {
-    this.questionText = questionText;
-    this.questionCategory = questionCategory;
-  }
+  @Column(name = "question_id")
+  private Long id;
 
   @Column(name = "question_text", nullable = false)
   private String questionText;
@@ -37,27 +28,17 @@ public class Question {
   @Column(name = "question_category", nullable = false)
   private String questionCategory;
 
-  public Long getQuestionId() {
-    return questionId;
+  public Question() {
   }
 
-  public void setQuestionId(Long questionId) {
-    this.questionId = questionId;
-  }
-
-  public String getQuestionText() {
-    return questionText;
-  }
-
-  public void setQuestionText(String questionText) {
+  /**
+   * Constructs a new Question with the specified question text and question category.
+   *
+   * @param questionText     The text of the Question.
+   * @param questionCategory The category of the Question.
+   */
+  public Question(String questionText, String questionCategory) {
     this.questionText = questionText;
-  }
-
-  public String getQuestionCategory() {
-    return questionCategory;
-  }
-
-  public void setQuestionCategory(String questionCategory) {
     this.questionCategory = questionCategory;
   }
 }
