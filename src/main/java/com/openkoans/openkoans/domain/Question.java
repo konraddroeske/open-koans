@@ -6,14 +6,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 /**
  * Represents a Question in the application.
  */
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "questions")
 public class Question {

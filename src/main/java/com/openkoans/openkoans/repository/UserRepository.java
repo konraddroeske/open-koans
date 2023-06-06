@@ -1,6 +1,7 @@
 package com.openkoans.openkoans.repository;
 
-import com.openkoans.openkoans.domain.User;
+import com.openkoans.openkoans.domain.user.User;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,11 +10,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-  /**
-   * Find a user by their username.
-   *
-   * @param username the username of the user to find
-   * @return the found user, or null if not found
-   */
-  User findByUsername(String username);
+  Optional<User> findByEmail(String email);
 }

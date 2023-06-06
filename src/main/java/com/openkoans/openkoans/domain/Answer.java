@@ -1,5 +1,6 @@
 package com.openkoans.openkoans.domain;
 
+import com.openkoans.openkoans.domain.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,14 +9,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 /**
  * Represents a User's Answer to a Question in the application.
  */
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "answers")
 public class Answer {
@@ -51,7 +50,7 @@ public class Answer {
    *
    * @param userId     The user id of the Answer.
    * @param questionId The question id of the Answer.
-   * @param answerText  The text of the Answer.
+   * @param answerText The text of the Answer.
    */
   public Answer(Long userId, Long questionId, String answerText) {
     this.userId = userId;

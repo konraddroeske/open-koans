@@ -1,5 +1,5 @@
-INSERT INTO users (username, password_hash, email)
-VALUES ('Bob', 'test123', 'test1@test.com');
+INSERT INTO users (password, email, role)
+VALUES ('test123', 'test1@test.com', 'ADMIN');
 
-INSERT INTO users (username, password_hash, email)
-VALUES ('Sue', 'test123', 'test2@test.com');
+INSERT INTO users (password, email, role)
+VALUES ('test123', 'test2@test.com', 'USER');

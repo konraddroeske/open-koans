@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Controller for Answers
  */
 @RestController
-@RequestMapping("/answers")
+@RequestMapping("/api/v1/answers")
 public class AnswerController {
   private final AnswerService answerService;
 
